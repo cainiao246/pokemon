@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字逐个显示</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+
+            background-image: url('pokemon/bei.png');
+    background-size: cover; /* 保持背景图像铺满整个屏幕 */
+    background-position: center; /* 将背景图像居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+        }
+
+        .text {
+    font-size: 24px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明白色背景 */
+    padding: 10px; /* 在文字周围创建空间 */
+    max-width: px; /* 为文字容器设置最大宽度 */
+    word-wrap: break-word; /* 换行长单词 */
+}
+
+        .hidden-button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        img {
+            width: 100px;
+            height: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+    <script>
+        const text = "你好，新来的训练家，我是大木博士。我很高兴，你能来接受挑战。接下来你将对战三位道馆馆主，合理选择出战的宠物，将是你制胜的关键。";
+        const textElement = document.getElementById('text');
+        let index = 0;
+
+        function showText() {
+            if (index < text.length) {
+                textElement.innerHTML += text[index];
+                index++;
+                setTimeout(showText, 300); // 每个字出现的时间间隔
+            }
+        }
+
+        function redirect() {
+            window.location.href = "https://seventxjy.github.io/pokemen/"; // 跳转的页面链接
+        }
+
+        document.body.addEventListener('click', redirect);
+
+        showText();
+    </script>
+</body>
+</html>
