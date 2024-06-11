@@ -14,6 +14,7 @@
             background-image: url('pokemon/zhenbei.png');
             background-size: cover;
             background-position: center;
+            position: relative;
         }
 
         .text {
@@ -39,6 +40,7 @@
 </head>
 <body>
     <div class="text" id="text"></div>
+    <button class="hidden-button" id="hidden-button"></button>
     <script>
         const text = "你好，新来的训练家，我是大木博士。我很高兴，你能来接受挑战。接下来你将对战三位道馆馆主，合理选择出战的宠物，将是你制胜的关键。";
         const textElement = document.getElementById('text');
@@ -52,8 +54,15 @@
             }
         }
 
+        function redirect() {
+            window.location.href = "https://seventxjy.github.io/pokemen/"; // 跳转的页面链接
+        }
+
+        document.getElementById('hidden-button').addEventListener('click', redirect);
+
         showText();
     </script>
 </body>
 </html>
+
 
